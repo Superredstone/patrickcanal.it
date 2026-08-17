@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Patrick Canal</title>
+        <link rel="stylesheet" href="{% static 'tabler/tabler.min.css' %}">
+        <link rel="stylesheet" href="{% static 'fontawesome-7/css/all.min.css' %}">
+        <script href="{% static 'tabler/tabler.min.css' %}"></script>
+    </head>
+    <body>
+        <header class="navbar navbar-expand-md d-print-none">
+            <div class="container-xl">
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbar-menu"
+                        aria-controls="navbar-menu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'index' %}">
+                            <span class="nav-link-icon">
+                                <i class="fa-solid fa-house"></i>
+                            </span>
+                            <span class="nav-link-title">Home</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </body>
+</html>
