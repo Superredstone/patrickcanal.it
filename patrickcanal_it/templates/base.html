@@ -1,4 +1,4 @@
-{% load static %}
+{% load i18n static %}
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
     <head>
@@ -7,9 +7,10 @@
         <title>Patrick Canal</title>
         <link rel="stylesheet" href="{% static 'tabler/tabler.min.css' %}">
         <link rel="stylesheet" href="{% static 'fontawesome-7/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <script href="{% static 'tabler/tabler.min.css' %}"></script>
     </head>
-    <body>
+    <body class="d-flex flex-column">
         <header class="navbar navbar-expand-md d-print-none">
             <div class="container-xl">
                 <button class="navbar-toggler"
@@ -37,5 +38,20 @@
             {% block content %}
             {% endblock content %}
         </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p class="text-secondary">Copyright @ {% now "Y" %} Patrick Canal</p>
+                        <p class="text-secondary">{% trans "Distributed as FOSS with GPLv3 license" %}</p>
+                    </div>
+                    <div>
+                        <a href="https://github.com/Superredstone" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

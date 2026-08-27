@@ -1,2 +1,38 @@
-{% include "base.html" %}
-{% block content %}Hello{% endblock %}
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+    <div class="container">
+        <div class="row h-">
+            <div class="col">
+                <div class="text-center mt-4">
+                    <h1 class="display-2 fw-bold">Patrick Canal</h1>
+                    <p class="text-secondary fs-2 text-uppercase fw-bold">{% trans "Fullstack developer & system administrator" %}</p>
+                    <p class="text-secondary fs-3">
+                        {% blocktrans %}
+                        I build modern web applications with a focus on
+                        clean code, usability and performance.
+                        {% endblocktrans %}
+                    </p>
+                </div>
+                <div class="mb-4 text-center">
+                    <div class="mb-2">
+                        <span class="badge bg-blue-lt fs-4 me-2">Python</span>
+                        <span class="badge bg-blue-lt fs-4 me-2">Django</span>
+                        <span class="badge bg-blue-lt fs-4 me-2">JavaScript/TypeScript</span>
+                        <span class="badge bg-blue-lt fs-4 me-2">HTML/CSS</span>
+                    </div>
+                    <div>
+                        <span class="badge bg-blue-lt fs-4 me-2">Docker</span>
+                        <span class="badge bg-blue-lt fs-4 me-2">Git</span>
+                        <span class="badge bg-blue-lt fs-4 me-2">Linux</span>
+                        <span class="badge bg-blue-lt fs-4">NixOS</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="" class="btn btn-primary btn-lg me-2">My projects</a>
+                    <a href="" class="btn btn-outline-secondary btn-lg">Contact me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
