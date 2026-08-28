@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -14,7 +15,11 @@
   };
 
   git-hooks.hooks = {
-    ruff.enable = true;
+    ruff = {
+      enable = true;
+      package = pkgs.ruff;
+      excludes = [ "migrations/" ];
+    };
     djlint = {
       enable = true;
       name = "djlint";

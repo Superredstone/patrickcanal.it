@@ -5,10 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Patrick Canal</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'tabler/tabler.min.css' %}">
         <link rel="stylesheet" href="{% static 'fontawesome-7/css/all.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <script href="{% static 'tabler/tabler.min.css' %}"></script>
+        <script src="{% static 'tabler/tabler.min.js' %}"></script>
+        <script src="{% static 'tailwindcss/tailwindcss.min.js' %}"></script>
     </head>
     <body class="d-flex flex-column">
         <header class="navbar navbar-expand-md d-print-none">
@@ -34,7 +35,7 @@
                 </ul>
             </div>
         </header>
-        <main>
+        <main class="mb-2">
             {% block content %}
             {% endblock content %}
         </main>

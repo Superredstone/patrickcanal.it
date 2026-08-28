@@ -12,3 +12,8 @@ devenv.local.yaml
 .pre-commit-config.yaml
 
 *.sqlite3
+
+*.pyc
+__pycache__/
+local_settings.py
+uploads/

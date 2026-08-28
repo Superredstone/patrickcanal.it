@@ -7,7 +7,7 @@ max_line_length = 160
 
 [tool.ruff]
 exclude = [
-    "*migrations*",
+    "*migrations/",
     "settings.py",
 ]
 
