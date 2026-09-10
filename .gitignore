@@ -8,9 +8,6 @@ devenv.local.yaml
 # direnv
 .direnv
 
-# pre-commit
-.pre-commit-config.yaml
-
 *.sqlite3
 
 *.pyc

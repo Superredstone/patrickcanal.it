@@ -38,9 +38,23 @@ class JobExperience(models.Model):
 
 class JobTask(models.Model):
     job = models.ForeignKey(
-        to=JobExperience, null=False, blank=False, on_delete=models.CASCADE, related_name="job_tasks"
+        to=JobExperience,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name="job_tasks",
     )
     description = models.TextField(verbose_name=_("Description"), max_length=4192)
 
     def __str__(self):
         return self.job.__str__()
+
+
+class Project(models.Model):
+    name = models.CharField(
+        verbose_name=_("Name"), max_length=256, null=False, blank=False
+    )
+    short_description = models.CharField(
+        verbose_name=_("Short description"), max_length=512, blank=False, null=False
+    )
+    url = models.URLField(verbose_name=_("URL"), blank=True, null=False)

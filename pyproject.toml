@@ -19,4 +19,6 @@ line-ending = "auto"
 
 [tool.ruff.lint]
 extend-select = ["I"]
-
+ignore = [
+    "RUF012"
+]
