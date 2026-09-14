@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "python manage.py migrate && gunicorn patrickcanal_it.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn patrickcanal_it.wsgi:application --bind 0.0.0.0:8000"]
