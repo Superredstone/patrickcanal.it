@@ -115,7 +115,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-from patrickcanal_it.local_settings import *
+try: 
+    from patrickcanal_it.local_settings import *
+except Exception as e:
+    print(e)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
