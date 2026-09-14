@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'patrickcanal_it.urls'
@@ -115,7 +116,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_ROOT = "wholestatic"
+STATIC_ROOT = BASE_DIR / "wholestatic"
 
 try: 
     from patrickcanal_it.local_settings import *
