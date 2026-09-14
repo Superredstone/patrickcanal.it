@@ -6,7 +6,9 @@
             {% for project in object_list %}
                 <div class="col-md-4">
                     {% if project.url %}
-                        <a class="card card-link card-link-pop" href="{{ project.url }}">
+                        <a class="card card-link card-link-pop"
+                           href="{{ project.url }}"
+                           target="_blank">
                             <div class="card-body">
                                 <h4>{{ project.name }}</h4>
                                 <p>{{ project.short_description }}</p>
