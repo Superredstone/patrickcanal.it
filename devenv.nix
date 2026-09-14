@@ -1,5 +1,4 @@
 {
-  pkgs,
   ...
 }:
 
@@ -11,6 +10,5 @@
       enable = true;
       requirements = ./requirements.txt;
     };
-
   };
 }

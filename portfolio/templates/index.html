@@ -30,7 +30,7 @@
                 </div>
                 <div class="text-center">
                     <a href="{% url 'projects' %}" class="btn btn-primary btn-lg me-2">My projects</a>
-                    <a href="" class="btn btn-outline-secondary btn-lg">Contact me</a>
+                    <a href="#contact-me" class="btn btn-outline-secondary btn-lg">Contact me</a>
                 </div>
             </div>
         </div>
@@ -111,5 +111,35 @@
                 {% endfor %}
             </ul>
         </div>
+        <div class="hr"></div>
+        <div class="row d-flex justify-content-center mb-4">
+            <div class="card col-md-6" id="contact-me">
+                <div class="card-body">
+                    <h3 class="card-title fs-2">
+                        <b>
+                            <i class="fa-solid fa-envelope"></i>
+                            {% trans "Contact me" %}
+                        </b>
+                    </h3>
+                    <form action="{% url 'contact' %}" method="post" id="contact-form">
+                        {% csrf_token %}
+                        {% for field in contact_form %}
+                            <div class="form-floating mb-2">
+                                {{ field }}
+                                <label for="{{ field.id }}">{{ field.label }}</label>
+                            </div>
+                        {% endfor %}
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">{% trans "Send" %}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    <style>
+        textarea {
+            height: 10rem !important;
+        }
+    </style>
 {% endblock %}

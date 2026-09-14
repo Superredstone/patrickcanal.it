@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'post_office',
     'portfolio'
 ]
 
@@ -114,6 +115,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+from patrickcanal_it.local_settings import *
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
@@ -126,9 +128,16 @@ STATICFILES_DIRS = [
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+EMAIL_BACKEND = 'post_office.EmailBackend'
+# TODO: Replace old mail backend with new once post_office supports it 
+# MAILERS = {
+#     'default': {
+#         'BACKEND': 'post_office.EmailBackend',
+#     },
+#     'smtp': {
+#         'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
+#         'OPTIONS': {'host': MAILER_HOST, 'port': 587},
+#     },
+# }
+# POST_OFFICE = {'DEFAULT_MAILER': 'smtp'}
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
