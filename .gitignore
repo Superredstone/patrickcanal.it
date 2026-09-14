@@ -15,3 +15,4 @@ devenv.local.yaml
 __pycache__/
 local_settings.py
 uploads/
+wholestatic/

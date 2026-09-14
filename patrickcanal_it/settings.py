@@ -115,6 +115,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_ROOT = "wholestatic"
+
 try: 
     from patrickcanal_it.local_settings import *
 except Exception as e:
