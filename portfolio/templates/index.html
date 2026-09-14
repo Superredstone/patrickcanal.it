@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n static %}
 {% block content %}
-    <div class="container">
+    <div class="container px-4 px-md-0">
         <div class="row mb-4">
             <div class="col">
                 <div class="text-center mt-4">
@@ -16,16 +16,16 @@
                 </div>
                 <div class="mb-4 text-center">
                     <div class="mb-2">
-                        <span class="badge bg-blue-lt fs-4 me-2">Python</span>
-                        <span class="badge bg-blue-lt fs-4 me-2">Django</span>
-                        <span class="badge bg-blue-lt fs-4 me-2">JavaScript/TypeScript</span>
-                        <span class="badge bg-blue-lt fs-4 me-2">HTML/CSS</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">Python</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">Django</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">JavaScript/TypeScript</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">HTML/CSS</span>
                     </div>
                     <div>
-                        <span class="badge bg-blue-lt fs-4 me-2">Docker</span>
-                        <span class="badge bg-blue-lt fs-4 me-2">Git</span>
-                        <span class="badge bg-blue-lt fs-4 me-2">Linux</span>
-                        <span class="badge bg-blue-lt fs-4">NixOS</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">Docker</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">Git</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">Linux</span>
+                        <span class="badge bg-blue-lt fs-4 m-1">NixOS</span>
                     </div>
                 </div>
                 <div class="text-center">
@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row row-deck row-cards">
+            <div class="col-md-4">
                 <div class="card h-full">
                     <div class="card-body d-flex align-items-center flex-column">
                         <div class="w-24 h-30">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <div class="card h-full">
                     <div class="card-body d-flex align-items-center flex-column">
                         <div class="w-24 h-30">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <div class="card h-full">
                     <div class="card-body d-flex align-items-center flex-column">
                         <div class="w-24 h-30 text-5xl pt-4">
@@ -112,7 +112,7 @@
             </ul>
         </div>
         <div class="hr"></div>
-        <div class="row d-flex justify-content-center mb-4">
+        <div class="row d-flex justify-content-center mb-md-4">
             <div class="card col-md-6" id="contact-me">
                 <div class="card-body">
                     <h3 class="card-title fs-2">
