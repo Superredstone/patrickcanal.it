@@ -129,8 +129,10 @@ except Exception as e:
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static/",
-    BASE_DIR / "uploads/",
 ]
+
+MEDIA_URL = "/uploads/"
+MEDIA_ROOT = BASE_DIR / "uploads/"
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration

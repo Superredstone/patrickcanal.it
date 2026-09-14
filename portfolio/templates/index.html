@@ -90,7 +90,7 @@
                 {% for je in job_experiences %}
                     <li class="timeline-event">
                         <div class="timeline-event-icon bg-primary">
-                            <img src="{{ je.company.logo.url }}" alt="">
+                            <img src="{% url 'company-logo' pk=je.company.pk %}" alt="">
                         </div>
                         <div class="timeline-event-card card">
                             <div class="card-body">

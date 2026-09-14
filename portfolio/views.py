@@ -1,7 +1,7 @@
 from django.conf import settings
-from django.http.response import HttpResponseBadRequest
+from django.http.response import FileResponse, HttpResponseBadRequest
 from django.utils.translation import gettext as _
-from django.views.generic import ListView, TemplateView
+from django.views.generic import DetailView, ListView, TemplateView
 from post_office import mail
 
 from portfolio import forms, models
@@ -41,3 +41,11 @@ class ContactSend(TemplateView):
         )
 
         return super().get(request, *args, **kwargs)
+
+
+class CompanyLogo(DetailView):
+    model = models.Company
+
+    def get(self, request, *args, **kwargs):
+        company = self.get_object()
+        return FileResponse(company.logo)
