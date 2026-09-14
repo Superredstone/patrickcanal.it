@@ -1,3 +1,4 @@
 django
 djlint
 django-post_office
+gunicorn
