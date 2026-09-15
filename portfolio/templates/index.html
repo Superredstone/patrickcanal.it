@@ -97,7 +97,7 @@
                                 <p class="text-primary mb-0">{{ je.start }} - {% if je.end %}{{ je.end }}{% else %}{% trans "today" %}{% endif %}</p>
                                 <h2 class="fs-2">{{ je.position }}</h2>
                                 <div>
-                                    <div class="text-danger">{{ je.company.name }}</div>
+                                    <div style="color: #{{ je.company.color }};">{{ je.company.name }}</div>
                                     <div class="text-secondary">{{ je.company.location }}</div>
                                     <div class="mt-2 text-white">
                                         {% for jt in je.job_tasks.all %}

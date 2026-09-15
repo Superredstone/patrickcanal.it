@@ -9,6 +9,13 @@ class Company(models.Model):
     location = models.CharField(
         verbose_name=_("Location"), max_length=255, blank=False, null=False
     )
+    color = models.CharField(
+        verbose_name=_("Color (hex)"),
+        max_length=6,
+        null=False,
+        blank=False,
+        default="000000",
+    )
     logo = models.FileField(upload_to="portfolio/companies_logo/")
 
     def __str__(self):
