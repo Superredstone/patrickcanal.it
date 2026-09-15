@@ -9,7 +9,7 @@ class Company(models.Model):
     location = models.CharField(
         verbose_name=_("Location"), max_length=255, blank=False, null=False
     )
-    logo = models.FileField(upload_to="uploads/portfolio/companies_logo/")
+    logo = models.FileField(upload_to="portfolio/companies_logo/")
 
     def __str__(self):
         return self.name
