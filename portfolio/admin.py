@@ -5,17 +5,17 @@ from portfolio import models
 
 @admin.register(models.JobExperience)
 class JobExperienceAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["company", "position", "start", "end"]
 
 
 @admin.register(models.JobTask)
 class JobTaskAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["job__company", "description", "job__start", "job__end"]
 
 
 @admin.register(models.Company)
 class CompanyAdmin(admin.ModelAdmin):
-    pass
+    list_display = ["name", "location"]
 
 
 @admin.register(models.Project)
