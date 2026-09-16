@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.db.models import Q
 from django.http.response import FileResponse, HttpResponseBadRequest
 from django.utils.translation import gettext as _
 from django.views.generic import DetailView, ListView, TemplateView
@@ -59,4 +60,9 @@ class ProjectListQuery(ListView):
         if not query:
             return super().get_queryset()
 
-        return super().get_queryset().filter(name__contains=query)
+        return (
+            super()
+            .get_queryset()
+            .filter(Q(name__contains=query) | Q(tags__name__contains=query))
+            .distinct()
+        )
