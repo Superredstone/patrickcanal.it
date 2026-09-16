@@ -5,6 +5,7 @@ from portfolio import views
 urlpatterns = [
     path("", views.PortfolioView.as_view(), name="portfolio"),
     path("projects/", views.ProjectList.as_view(), name="projects"),
+    path("projects/query/", views.ProjectListQuery.as_view(), name="projects-query"),
     path("contact/", views.ContactSend.as_view(), name="contact"),
     path("company/<int:pk>/logo/", views.CompanyLogo.as_view(), name="company-logo"),
 ]

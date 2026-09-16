@@ -18,9 +18,8 @@ class PortfolioView(TemplateView):
         }
 
 
-class ProjectList(ListView):
+class ProjectList(TemplateView):
     template_name = "project_list.html"
-    model = models.Project
 
 
 class ContactSend(TemplateView):
@@ -49,3 +48,15 @@ class CompanyLogo(DetailView):
     def get(self, request, *args, **kwargs):
         company = self.get_object()
         return FileResponse(company.logo)
+
+
+class ProjectListQuery(ListView):
+    template_name = "project_list_query.html"
+    model = models.Project
+
+    def get_queryset(self):
+        query = self.request.GET.get("query")
+        if not query:
+            return super().get_queryset()
+
+        return super().get_queryset().filter(name__contains=query)
