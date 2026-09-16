@@ -57,6 +57,22 @@ class JobTask(models.Model):
         return self.job.__str__()
 
 
+class ProjectTag(models.Model):
+    name = models.CharField(
+        verbose_name=_("Name"), max_length=25, blank=False, null=False
+    )
+    color = models.CharField(
+        verbose_name=_("Color (hex)"),
+        max_length=6,
+        null=False,
+        blank=False,
+        default="000000",
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Project(models.Model):
     name = models.CharField(
         verbose_name=_("Name"), max_length=256, null=False, blank=False
@@ -65,3 +81,12 @@ class Project(models.Model):
         verbose_name=_("Short description"), max_length=512, blank=False, null=False
     )
     url = models.URLField(verbose_name=_("URL"), blank=True, null=False)
+    tags = models.ManyToManyField(
+        ProjectTag,
+        verbose_name=_("Tags"),
+        blank=True,
+        related_name="projects",
+    )
+
+    def __str__(self):
+        return self.name

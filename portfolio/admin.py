@@ -21,3 +21,8 @@ class CompanyAdmin(admin.ModelAdmin):
 @admin.register(models.Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ["name", "short_description"]
+
+
+@admin.register(models.ProjectTag)
+class ProjectTagAdmin(admin.ModelAdmin):
+    list_display = ["name", "color"]

@@ -12,6 +12,12 @@
                             <div class="card-body">
                                 <h4>{{ project.name }}</h4>
                                 <p>{{ project.short_description }}</p>
+                                <div>
+                                    {% for t in project.tags.all %}
+                                        <div class="badge text-white fs-5"
+                                             style="background-color: #{{ t.color }}">{{ t }}</div>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </a>
                     {% else %}
@@ -19,6 +25,12 @@
                             <div class="card-body">
                                 <h4>{{ project.name }}</h4>
                                 <p>{{ project.short_description }}</p>
+                                <div>
+                                    {% for t in project.tags.all %}
+                                        <div class="badge text-white fs-5"
+                                             style="background-color: #{{ t.color }}">{{ t }}</div>
+                                    {% endfor %}
+                                </div>
                             </div>
                         </div>
                     {% endif %}
