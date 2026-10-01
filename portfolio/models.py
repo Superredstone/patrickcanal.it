@@ -77,7 +77,7 @@ class Project(models.Model):
     name = models.CharField(
         verbose_name=_("Name"), max_length=256, null=False, blank=False
     )
-    short_description = models.CharField(
+    short_description = models.TextField(
         verbose_name=_("Short description"), max_length=512, blank=False, null=False
     )
     url = models.URLField(verbose_name=_("URL"), blank=True, null=False)
