@@ -2,10 +2,14 @@
 
 ## Docker 
 Build container 
-`docker build . -t patrickcanal.it`
+```bash
+docker build . -t patrickcanal.it
+```
 
 Run docker run 
-`docker run -p 8000:8000 patrickcanal.it -v "$(pwd)/patrickcanal.it/local_settings.py:/app/patrickcanal.it/local_settings.py" -v "$(pwd)/patrickcanal.it/db.sqlite:/app/db.sqlite"`
+```bash
+docker run -p 8000:8000 patrickcanal.it -v "$(pwd)/patrickcanal.it/local_settings.py:/app/patrickcanal.it/local_settings.py" -v "$(pwd)/patrickcanal.it/db.sqlite:/app/db.sqlite"
+```
 
 ## Required variables
 ### Portfolio
