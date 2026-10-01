@@ -1,4 +1,8 @@
+{% load i18n %}
 <div class="row row-deck row-cards">
+    {% if object_list.count == 0 %}
+        <p>{% trans "No projects found" %}</p>
+    {% endif %}
     {% for project in object_list %}
         <div class="col-md-4">
             {% if project.url %}
