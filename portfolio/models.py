@@ -68,6 +68,7 @@ class ProjectTag(models.Model):
         blank=False,
         default="000000",
     )
+    dark_text = models.BooleanField(verbose_name=_("Dark text"), default=False)
 
     def __str__(self):
         return self.name

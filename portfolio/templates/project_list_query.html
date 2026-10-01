@@ -14,7 +14,7 @@
                         <p>{{ project.short_description }}</p>
                         <div>
                             {% for t in project.tags.all %}
-                                <div class="badge text-white fs-5"
+                                <div class="badge {% if t.dark_text %}text-black{% else %}text-white{% endif %} fs-5"
                                      style="background-color: #{{ t.color }}">{{ t }}</div>
                             {% endfor %}
                         </div>
