@@ -21,6 +21,7 @@ class CompanyAdmin(admin.ModelAdmin):
 @admin.register(models.Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ["name", "short_description"]
+    filter_horizontal = ["tags"]
 
 
 @admin.register(models.ProjectTag)
