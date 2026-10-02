@@ -39,6 +39,14 @@
                                     <span class="nav-link-title">{% trans "Projects" %}</span>
                                 </a>
                             </li>
+                            {% if user.is_superuser %}
+                                <li class="nav-item">
+                                    <a href="{% url 'admin:index' %}" class="nav-link">
+                                        <span class="nav-link-icon"><i class="fa-solid fa-wrench"></i></span>
+                                        <span class="nav-link-title">{% trans "Admin" %}</span>
+                                    </a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
