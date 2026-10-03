@@ -6,6 +6,9 @@ css:
 css-nix:
     nix run nixpkgs#tailwindcss -- -i ./static/css/input.css -o ./static/css/style.css -c tailwind.config.js 
 
+css-watch-nix:
+    nix run nixpkgs#tailwindcss -- -i ./static/css/input.css -o ./static/css/style.css -c tailwind.config.js -w
+
 update-dependencies: update-tabler update-htmx
 
 update-htmx:
